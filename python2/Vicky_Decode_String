@@ -1,0 +1,23 @@
+class Codec:
+    
+    def __init__(self):
+        self.url=[]
+        
+    
+
+    def encode(self, longUrl):
+        """Encodes a URL to a shortened URL.
+        
+        :type longUrl: str
+        :rtype: str
+        """
+        self.url.append(longUrl)
+        return 'http://tinyurl.com/'+str(len(self.url)-1)
+
+    def decode(self, shortUrl):
+        """Decodes a shortened URL to its original URL.
+        
+        :type shortUrl: str
+        :rtype: str
+        """
+        return self.url[int(shortUrl.split('/')[-1])]
